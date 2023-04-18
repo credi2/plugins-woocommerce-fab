@@ -1,0 +1,316 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-09-29 18:20+0200\n"
+"PO-Revision-Date: 2022-09-29 18:22+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE@formal\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: finance-a-bike.php:16
+msgid ""
+"Official WooCommerce payment gateway for FINANCE A BIKE installment payments."
+msgstr ""
+"Offizielles WooCommerce Zahlungs-Gateway für FINANCE A BIKE-Ratenzahlungen."
+
+#: includes/FinanceABike.php:53
+msgid ""
+"FINANCE A BIKE enables customers to pay for goods worth up to €12,000 in "
+"installments also in the online shop."
+msgstr ""
+"FINANCE A BIKE ermöglicht es Kunden auch im Online-Shop, Waren im Wert von "
+"bis zu 12.000 € in Raten zu bezahlen."
+
+#: includes/FinanceABike.php:59 includes/FinanceABike.php:621
+msgid "Live"
+msgstr "Live"
+
+#: includes/FinanceABike.php:60
+msgid "Test"
+msgstr "Test"
+
+#: includes/FinanceABike.php:63
+msgid "Order"
+msgstr "Bestellung"
+
+#: includes/FinanceABike.php:77
+msgid "Enable/Disable"
+msgstr "Aktivieren/Deaktivieren"
+
+#: includes/FinanceABike.php:79
+msgid "Enable FINANCE A BIKE"
+msgstr "FINANCE A BIKE aktivieren"
+
+#: includes/FinanceABike.php:83
+msgid "Title"
+msgstr "Bezeichnung"
+
+#: includes/FinanceABike.php:86
+msgid "This controls the title which the user sees during checkout."
+msgstr "Dies steuert den Titel, den der Benutzer beim Bezahlvorgang sieht."
+
+#: includes/FinanceABike.php:89
+msgid "Installment purchase"
+msgstr "Ratenkauf"
+
+#: includes/FinanceABike.php:93
+msgid "Description"
+msgstr "Beschreibung"
+
+#: includes/FinanceABike.php:96
+msgid "Payment method description that the customer will see on your checkout."
+msgstr ""
+"Beschreibung der Zahlungsmethode, die Kunden bei der Kaufabwicklung sehen."
+
+#: includes/FinanceABike.php:100
+msgid ""
+"FINANCE A BIKE allows you to pay for your purchases in installments. You can "
+"select the installment amount at the time of purchase and change it later at "
+"any time."
+msgstr ""
+"FINANCE A BIKE ermöglicht es Ihnen, Ihre Einkäufe in Raten zu bezahlen. Die "
+"Ratenhöhe können Sie sich beim Kauf aussuchen und später jederzeit ändern."
+
+#: includes/FinanceABike.php:107
+msgid "Secret"
+msgstr "Secret"
+
+#: includes/FinanceABike.php:110
+msgid ""
+"You can find your Secret in your FINANCE A BIKE portal under Settings -> E-"
+"COMMERCE"
+msgstr ""
+"Sie finden Ihr Geheimnis in Ihrem FINANCE A BIKE Portal unter Einstellungen -"
+"> E-COMMERCE"
+
+#: includes/FinanceABike.php:117
+msgid "API Key"
+msgstr "API-Key"
+
+#: includes/FinanceABike.php:120
+msgid ""
+"You can find your API Key in your FINANCE A BIKE portal under Settings -> E-"
+"COMMERCE"
+msgstr ""
+"Sie finden Ihren API-Key in Ihrem FINANCE A BIKE Portal unter Einstellungen -"
+"> E-COMMERCE"
+
+#: includes/FinanceABike.php:127
+msgid "Mode"
+msgstr "Modus"
+
+#: includes/FinanceABike.php:143
+msgid ""
+"The two modes can only be used with the corresponding access data. For "
+"example, if you have Live access data, you can only use Live mode. To de-/"
+"activate sandboxing in live mode, please contact FINANCE A BIKE."
+msgstr ""
+"Die beiden Modi können nur mit den entsprechenden Zugangsdaten verwendet "
+"werden. Wenn Sie zum Beispiel Live-Zugangsdaten haben, können Sie nur den "
+"Live-Modus nutzen. Um das Sandboxing im Live-Modus zu de-/aktivieren, wenden "
+"Sie sich bitte an FINANCE A BIKE."
+
+#: includes/FinanceABike.php:152
+msgid "Reference"
+msgstr "Verwendungszweck"
+
+#: includes/FinanceABike.php:155
+msgid ""
+"Will be used for the transfer to your account. The order number will be "
+"appended automatically."
+msgstr ""
+"Wird für die Überweisung auf Ihr Konto verwendet. Die Bestellnummer wird "
+"automatisch angehängt."
+
+#: includes/FinanceABike.php:163 includes/FinanceABike.php:243
+msgid "Validity period"
+msgstr "Gültigkeitsdauer"
+
+#: includes/FinanceABike.php:166
+msgid ""
+"How long (in days) users can complete the process at FINANCE A BIKE. You "
+"must hold the goods during this period."
+msgstr ""
+"Wie lange (in Tagen) können die Nutzer den Vorgang bei FINANCE A BIKE "
+"abschließen. Sie müssen die Ware während dieses Zeitraums vorhalten."
+
+#: includes/FinanceABike.php:174
+msgid "Product level placement"
+msgstr "Platzierung auf Produktebene"
+
+#: includes/FinanceABike.php:177
+msgid "No"
+msgstr "Keine"
+
+#: includes/FinanceABike.php:178
+msgid "Product page"
+msgstr "Produktseite"
+
+#: includes/FinanceABike.php:179
+msgid "Overview page"
+msgstr "Übersichtsseite"
+
+#: includes/FinanceABike.php:180
+msgid "Product & Overview Page"
+msgstr "Produkt- & Übersichtsseite"
+
+#: includes/FinanceABike.php:183
+msgid "Whether and where to integrate a widget with products."
+msgstr "Ob und wo ein Widget in Produkte integriert werden soll."
+
+#: includes/FinanceABike.php:190
+msgid "Show button to checkout?"
+msgstr "Button zur Kasse anzeigen?"
+
+#: includes/FinanceABike.php:193
+msgid ""
+"Defines whether to display a button in the product-level overlay that takes "
+"users directly to checkout."
+msgstr ""
+"Legt fest, ob im Overlay auf Produktebene eine Schaltfläche angezeigt werden "
+"soll, die den Benutzer direkt zur Kasse führt."
+
+#: includes/FinanceABike.php:201
+msgid "Order state 'Order Received'"
+msgstr "Bestellstatus „Bestellung Eingegangen“"
+
+#: includes/FinanceABike.php:205
+msgid "Initial state of an order placed with FINANCE A BIKE."
+msgstr "Initialer Status einer mit FINANCE A BIKE aufgegebenen Bestellung."
+
+#: includes/FinanceABike.php:212
+msgid "Order state 'Payment Received'"
+msgstr "Bestellstatus „Bezahlung Eingegangen“"
+
+#: includes/FinanceABike.php:216
+msgid ""
+"State of an order placed with FINANCE A BIKE once the customer completed the "
+"funding process."
+msgstr ""
+"Status einer Bestellung, die mit FINANCE A BIKE aufgegeben wurde, sobald der "
+"Kunde den Finanzierungsprozess abgeschlossen hat."
+
+#: includes/FinanceABike.php:223
+msgid "Order state 'Cancelled'"
+msgstr "Bestellstatus „Abgebrochen“"
+
+#: includes/FinanceABike.php:227
+msgid ""
+"State of an order placed with FINANCE A BIKE if the customer cancels the "
+"funding process."
+msgstr ""
+"Status einer Bestellung, die mit FINANCE A BIKE aufgegeben wurde, wenn der "
+"Kunde den Finanzierungsprozess abbricht."
+
+#: includes/FinanceABike.php:234
+msgid "Order state 'Timeout'"
+msgstr "Bestellstatus „Zeitüberschreitung“"
+
+#: includes/FinanceABike.php:239
+#, php-format
+msgid ""
+"State of an order placed with FINANCE A BIKE if the customer does not "
+"complete the funding process in time. Use setting '%s' to adjust this period."
+msgstr ""
+"Status einer Bestellung, die mit FINANCE A BIKE aufgegeben wurde, wenn der "
+"Kunde den Finanzierungsprozess nicht rechtzeitig abschließt. Mit der "
+"Einstellung „%s“ kann die Zeitspanne eingestellt werden."
+
+#: includes/FinanceABike.php:261
+#, php-format
+msgid "%s %s: An error has occurred, please contact <a href=\"%s\">%s</a>."
+msgstr ""
+"%s %s: Ein Fehler ist aufgetreten, bitte wenden Sie sich an <a href=\"%s\">"
+"%s</a>."
+
+#: includes/FinanceABike.php:277
+msgid "Customer still needs to verify."
+msgstr "Kunde muss sich noch verifizieren."
+
+#: includes/FinanceABike.php:458
+#, php-format
+msgid ""
+"<strong>Caution:</strong> %s is only available for customers with a billing "
+"address in Germany,<br>allowing more countries in the following setting "
+"added by another plugin will not change this!"
+msgstr ""
+"<strong>Achtung:</strong> %s ist nur für Kunden mit einer Rechnungsadresse "
+"in Deutschland verfügbar.<br>Folgende Einstellung wurde von einem weiteren "
+"Plug-In hinzugefügt, weitere Länder hier zu erlauben wird<br> darauf keinen "
+"Einfluss nehmen!"
+
+#: includes/FinanceABike.php:563
+#, php-format
+msgid ""
+"<strong>%s</strong> has been disabled because WooCommerce does not use Euro "
+"as currency. Please set Euro as currency and re-enable the payment method "
+"again <a href=\"%s\">here</a>."
+msgstr ""
+"<strong>%s</strong> wurde deaktiviert, da WooCommerce nicht Euro als Währung "
+"eingestellt hat. Bitte stellen Sie Euro als Währung ein und aktivieren Sie "
+"die Zahlungsmethode anschließend wieder <a href=\"%s\">hier</a>."
+
+#: includes/FinanceABike.php:599
+#, php-format
+msgid ""
+"<strong>%s</strong> has been disabled because WooCommerce does not require "
+"an SSL certificate on the payment page. Please purchase and install a valid "
+"SSL certificate and then re-enable the payment method <a href=\"%s\">here</"
+"a>."
+msgstr ""
+"<strong>%s</strong> wurde deaktiviert, da WooCommerce kein SSL-Zertifikat "
+"für die Zahlungsseite verlangt. Bitte erwerben und installieren Sie ein "
+"gültiges SSL-Zertifikat und aktivieren Sie dann die Zahlungsmethode <a href="
+"\"%s\">hier</a> wieder."
+
+#: includes/FinanceABike.php:615
+#, php-format
+msgid ""
+"<strong>%s</strong> will be disabled in %2$s mode because WooCommerce does "
+"not require SSL certificate on the payment page. Please purchase and install "
+"a valid SSL certificate before changing the mode to %2$s."
+msgstr ""
+"<strong>%s</strong> wird im Modus %2$s deaktiviert, da WooCommerce kein SSL-"
+"Zertifikat für die Zahlungsseite benötigt. Bitte erwerben und installieren "
+"Sie ein gültiges SSL-Zertifikat, bevor Sie den Modus auf %2$s ändern."
+
+#: includes/FinanceABike.php:666
+msgid "Payment process was canceled."
+msgstr "Bezahlvorgang wurde abgebrochen."
+
+#: includes/FinanceABike.php:674
+msgid "Order expired."
+msgstr "Bestellung abgelaufen."
+
+#: includes/FinanceABike.php:749
+msgid ""
+"Click on \"Continue to funding\". Have your valid ID document and online "
+"banking credentials ready."
+msgstr ""
+"Klicken Sie auf „Weiter zur Finanzierung“. Halten Sie Ihr gültiges "
+"Ausweisdokument und Ihre Onlinebanking-Zugangsdaten bereit."
+
+#: includes/FinanceABike.php:756
+msgid ""
+"Within just 5 minutes, complete your loan application, identify yourself via "
+"video call and sign your application electronically. Completely online and "
+"no paperwork required."
+msgstr ""
+"Innerhalb von nur 5 Minuten vervollständigen Sie Ihren Kreditantrag, "
+"identifizieren sich per Videotelefonat und unterschreiben Ihren Antrag "
+"elektronisch. Komplett online und ohne Papierkram."
+
+#: includes/FinanceABike.php:764
+msgid "Done! Once signed, your purchase is paid for and shipped."
+msgstr ""
+"Fertig! Nach erfolgter Unterschrift ist Ihr Einkauf bezahlt und wird "
+"verschickt."
+
+#: includes/FinanceABike.php:909
+msgid "Shipping costs"
+msgstr "Versandkosten"
