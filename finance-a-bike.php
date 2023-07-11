@@ -14,7 +14,7 @@ defined('ABSPATH') or die;
  * Plugin Name: FINANCE A BIKE – die schnelle und einfache Online-Fahrradfinanzierung
  * Plugin URI: https://www.financeabike.de/haendler/
  * Description: Der digitale Kredit zur Fahrradfinanzierung von Volkswagen Financial Services
- * Version: 0.0.7
+ * Version: 0.0.8
  * Author: SPiNNWERK GmbH
  * Author URI: https://www.spinnwerk.at/
  * Text Domain: finance-a-bike
