@@ -1,0 +1,24 @@
+.c2-financing-label {
+    font-size: 1rem;
+    margin: 1rem auto;
+}
+
+.c2-financing-label .c2-ecom-label {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.product .summary .c2-financing-label .c2-ecom-label {
+    justify-content: flex-start;
+}
+
+.c2-financing-label .c2-text-wrapper {
+    display: inline-block;
+    text-align: left;
+}
+
+.c2-financing-label .c2-text-label strong {
+    white-space: nowrap;
+}

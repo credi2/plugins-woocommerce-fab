@@ -1,0 +1,16 @@
+{
+    "name": "spinnwerk/finance-a-bike",
+    "autoload": {
+        "psr-4": {
+            "Spinnwerk\\FinanceABike\\": "includes/"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "yahnis-elsts/plugin-update-checker": "~5.0.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "symfony/var-dumper": "~6.2.8"
+    }
+}
