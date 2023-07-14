@@ -17,7 +17,7 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
 
         public const SHORTCODE_PRODUCT_INTEGRATION = 'fab_product_integration';
 
-        private const GATEWAY_VERSION = '0.0.7';
+        private const GATEWAY_VERSION = '0.0.8';
 
         private const CALLBACK_STATUS_SUCCESS = 'SUCCESS';
         private const CALLBACK_STATUS_CANCELLED = 'CANCELLED';
@@ -338,20 +338,34 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
         public function is_available(): bool
         {
             return is_admin()
-                || $this->enabled === 'yes'
-                && $this->isWithinMaxima()
-                && $this->isShippedToAllowedCountry();
+                || (
+                    $this->enabled === 'yes'
+                    && $this->isWithinMaxima()
+                    && $this->isShippedToAllowedCountry()
+                );
         }
 
         private function isWithinMaxima(float $price = null): bool
         {
-            $total = $price ?? $this->get_order_total();
+            $total = $price;
+
+            if ($total === null) {
+                $wc = WC();
+
+                if (empty($wc->cart) === false) {
+                    $total = $wc->cart->total;
+                }
+            }
 
             if (
-                $this->min_amount > 0
-                && $total < $this->min_amount
-                || $this->max_amount > 0
-                && $total > $this->max_amount
+                (
+                    $this->min_amount > 0
+                    && $total < $this->min_amount
+                )
+                || (
+                    $this->max_amount > 0
+                    && $total > $this->max_amount
+                )
             ) {
                 return false;
             }
