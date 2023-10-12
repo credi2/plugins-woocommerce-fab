@@ -834,12 +834,12 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
             ?>
                 <script id="c2EcomCheckoutScript"
                         data-src="https://portal.financeabike.de/assets/static/checkout/c2_ecom_checkout.all.min.js"
-                        data-c2-partnerApiKey="<?= $this->apiKey ?>"
-                        data-c2-mode="<?= $this->isLive()
+                        data-c2-partnerApiKey="<?php echo $this->apiKey; ?>"
+                        data-c2-mode="<?php echo $this->isLive()
                             ? $this->modes['live']['value']
-                            : $this->modes['test']['value'] ?>"
-                        data-c2-locale="<?= $this->getCurrentLanguage() ?>"
-                        data-c2-amount="<?= $this->getCartTotal() ?>"
+                            : $this->modes['test']['value']; ?>"
+                        data-c2-locale="<?php echo $this->getCurrentLanguage(); ?>"
+                        data-c2-amount="<?php echo $this->getCartTotal(); ?>"
                         data-state="init"
                 ></script>
             <?php
@@ -858,36 +858,36 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                     <div data-finance-a-bike-post-checkout-message>
                         <ol>
                             <li>
-                                <?= __(
+                                <?php _e(
                                     'Click on "Continue to funding". Have your valid ID document and online banking '
                                     . 'credentials ready.',
                                     'finance-a-bike'
-                                ) ?>
+                                ); ?>
                             </li>
                             <li>
-                                <?= __(
+                                <?php _e(
                                     'Within just 5 minutes, complete your loan application, identify yourself via '
                                     . 'video call and sign your application electronically. Completely online and no '
                                     . 'paperwork required.',
                                     'finance-a-bike'
-                                ) ?>
+                                ); ?>
                             </li>
                             <li>
-                                <?= __(
+                                <?php _e(
                                     'Done! Once signed, your purchase is paid for and shipped.',
                                     'finance-a-bike'
-                                ) ?>
+                                ); ?>
                             </li>
                         </ol>
                     </div>
                     <script id="c2EcomPostCheckoutScript"
                             src="https://portal.financeabike.de/assets/static/checkout/c2_ecom_post_checkout.all.min.js"
-                            data-c2-partnerApiKey="<?= $this->apiKey ?>"
-                            data-c2-mode="<?= $this->isLive()
+                            data-c2-partnerApiKey="<?php echo $this->apiKey; ?>"
+                            data-c2-mode="<?php echo $this->isLive()
                                 ? $this->modes['live']['value']
-                                : $this->modes['test']['value'] ?>"
-                            data-c2-locale="<?= $this->getCurrentLanguage() ?>"
-                            data-c2-purchaseUrl="<?= base64_decode($order->get_meta(self::ORDER_META_URL)) ?>">
+                                : $this->modes['test']['value']; ?>"
+                            data-c2-locale="<?php echo $this->getCurrentLanguage(); ?>"
+                            data-c2-purchaseUrl="<?php echo base64_decode($order->get_meta(self::ORDER_META_URL)); ?>">
                     </script>
                 <?php
 
@@ -905,17 +905,19 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 <script id="c2EcomLabelScript"
                         src="https://portal.financeabike.de/assets/static/label/c2_ecom_label.all.min.js"
                         defer async
-                        data-c2-partnerApiKey="<?= $this->apiKey ?>"
-                        data-c2-mode="<?= $this->mode ?>"
-                        data-c2-checkoutCallback="<?= $this->productCheckoutLink === 'yes' ? 'true' : 'false' ?>"
-                        data-c2-locale="<?= $this->getCurrentLanguage() ?>"
+                        data-c2-partnerApiKey="<?php echo $this->apiKey; ?>"
+                        data-c2-mode="<?php echo $this->mode; ?>"
+                        data-c2-locale="<?php echo $this->getCurrentLanguage(); ?>"
+                        data-c2-checkoutCallback="<?php
+                            echo $this->productCheckoutLink === 'yes' ? 'true' : 'false';
+                        ?>"
                 ></script>
 
                 <?php if ($this->productCheckoutLink === 'yes') : ?>
                     <script>
                         if (typeof c2Checkout === 'undefined') {
                             function c2Checkout() {
-                                location.href = '<?= wc_get_checkout_url() ?>';
+                                location.href = '<?php echo wc_get_checkout_url(); ?>';
                             }
                         }
                     </script>
