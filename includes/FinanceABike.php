@@ -46,6 +46,7 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
         private $stateTimedOut = 'wc-failed';
 
         private static $isProductScriptAdded = false;
+        private static $isPostCheckoutScriptAdded = false;
 
         public function __construct(bool $autoInit = true)
         {
@@ -341,7 +342,6 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 || (
                     $this->enabled === 'yes'
                     && $this->isWithinMaxima()
-                    && $this->isShippedToAllowedCountry()
                 );
         }
 
@@ -403,28 +403,9 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
             return $query;
         }
 
-        private function init(): void
+        private function eventuallyAddCheckoutIntegration(): void
         {
-            $this->init_form_fields();
-            $this->init_settings();
-
-            $this->handleSettings();
-
-            $this->checkSSL();
-            $this->checkCurrency();
-
-            add_action('woocommerce_update_options_payment_gateways_' . $this->id, [$this, 'process_admin_options']);
-
-            if ($this->enabled !== 'yes') {
-                return;
-            }
-
-            /** @see https://github.com/woocommerce/woocommerce/wiki/wc_get_orders-and-WC_Order_Query#adding-custom-parameter-support */
-            add_filter('woocommerce_order_data_store_cpt_get_orders_query', function ($query, $queryVars) {
-                return $this->addSupportForCustomQueryVars($query, $queryVars);
-            }, 10, 2);
-
-            if (is_checkout() && is_order_received_page() === false) {
+            if (is_checkout() && is_order_received_page() === false && $this->is_available()) {
                 add_action('wp_footer', function () {
                     $this->addCheckoutJavaScript();
                 });
@@ -448,6 +429,36 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                     );
                 });
             }
+        }
+
+        private function init(): void
+        {
+            $this->init_form_fields();
+            $this->init_settings();
+
+            $this->handleSettings();
+
+            $this->checkSSL();
+            $this->checkCurrency();
+
+            add_action('woocommerce_update_options_payment_gateways_' . $this->id, [$this, 'process_admin_options']);
+
+            if ($this->enabled !== 'yes') {
+                return;
+            }
+
+            /** @see https://github.com/woocommerce/woocommerce/wiki/wc_get_orders-and-WC_Order_Query#adding-custom-parameter-support */
+            add_filter('woocommerce_order_data_store_cpt_get_orders_query', function ($query, $queryVars) {
+                return $this->addSupportForCustomQueryVars($query, $queryVars);
+            }, 10, 2);
+
+            if (did_action('wp')) {
+                $this->eventuallyAddCheckoutIntegration();
+            } else {
+                add_action('wp', function () {
+                    $this->eventuallyAddCheckoutIntegration();
+                });
+            }
 
             add_action('wp_enqueue_scripts', function () {
                 wp_enqueue_style(
@@ -462,8 +473,24 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 $this->processCallback();
             });
 
+            add_action('woocommerce_before_thankyou', function (?int $orderId) {
+                if ($orderId === null) {
+                    return;
+                }
+
+                $order = wc_get_order($orderId);
+
+                if (empty($order) === false) {
+                    $this->addPostCheckoutJavaScript($order);
+                }
+            });
+
             add_filter('woocommerce_thankyou_order_received_text', function (string $text, ?WC_Order $order): string {
-                return $this->addPostCheckoutJavaScript($text, $order);
+                if (self::$isPostCheckoutScriptAdded && $order && $order->has_status('pending')) {
+                    return '';
+                }
+
+                return $text;
             }, 10, 2);
 
             // do not allow WooCommerce to cancel orders created with this payment gateway
@@ -807,59 +834,65 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
             ?>
                 <script id="c2EcomCheckoutScript"
                         data-src="https://portal.financeabike.de/assets/static/checkout/c2_ecom_checkout.all.min.js"
-                        data-c2-partnerApiKey="<?= $this->apiKey ?>"
-                        data-c2-mode="<?= $this->isLive()
+                        data-c2-partnerApiKey="<?php echo $this->apiKey; ?>"
+                        data-c2-mode="<?php echo $this->isLive()
                             ? $this->modes['live']['value']
-                            : $this->modes['test']['value'] ?>"
-                        data-c2-locale="<?= $this->getCurrentLanguage() ?>"
-                        data-c2-amount="<?= $this->getCartTotal() ?>"
+                            : $this->modes['test']['value']; ?>"
+                        data-c2-locale="<?php echo $this->getCurrentLanguage(); ?>"
+                        data-c2-amount="<?php echo $this->getCartTotal(); ?>"
                         data-state="init"
                 ></script>
             <?php
         }
 
-        private function addPostCheckoutJavaScript(string $text, ?WC_Order $order): string
+        private function addPostCheckoutJavaScript(WC_Order $order): void
         {
-            if ($order->get_payment_method() === $this->id && $order !== null && $order->get_status() === 'pending') {
-                ob_start(); ?>
+            if (
+                self::$isPostCheckoutScriptAdded === false
+                && $order->get_payment_method() === $this->id
+                && $order->has_status('pending')
+            ) {
+                wc_get_template('checkout/order-received.php', ['order' => $order]);
+
+                ?>
                     <div data-finance-a-bike-post-checkout-message>
                         <ol>
                             <li>
-                                <?= __(
+                                <?php _e(
                                     'Click on "Continue to funding". Have your valid ID document and online banking '
                                     . 'credentials ready.',
                                     'finance-a-bike'
-                                ) ?>
+                                ); ?>
                             </li>
                             <li>
-                                <?= __(
+                                <?php _e(
                                     'Within just 5 minutes, complete your loan application, identify yourself via '
                                     . 'video call and sign your application electronically. Completely online and no '
                                     . 'paperwork required.',
                                     'finance-a-bike'
-                                ) ?>
+                                ); ?>
                             </li>
                             <li>
-                                <?= __(
+                                <?php _e(
                                     'Done! Once signed, your purchase is paid for and shipped.',
                                     'finance-a-bike'
-                                ) ?>
+                                ); ?>
                             </li>
                         </ol>
                     </div>
                     <script id="c2EcomPostCheckoutScript"
                             src="https://portal.financeabike.de/assets/static/checkout/c2_ecom_post_checkout.all.min.js"
-                            data-c2-partnerApiKey="<?= $this->apiKey ?>"
-                            data-c2-mode="<?= $this->isLive()
+                            data-c2-partnerApiKey="<?php echo $this->apiKey; ?>"
+                            data-c2-mode="<?php echo $this->isLive()
                                 ? $this->modes['live']['value']
-                                : $this->modes['test']['value'] ?>"
-                            data-c2-locale="<?= $this->getCurrentLanguage() ?>"
-                            data-c2-purchaseUrl="<?= base64_decode($order->get_meta(self::ORDER_META_URL)) ?>">
+                                : $this->modes['test']['value']; ?>"
+                            data-c2-locale="<?php echo $this->getCurrentLanguage(); ?>"
+                            data-c2-purchaseUrl="<?php echo base64_decode($order->get_meta(self::ORDER_META_URL)); ?>">
                     </script>
-                <?php $text .= ob_get_clean();
-            }
+                <?php
 
-            return $text;
+                self::$isPostCheckoutScriptAdded = true;
+            }
         }
 
         private function addProductJavaScript(): void
@@ -872,17 +905,19 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 <script id="c2EcomLabelScript"
                         src="https://portal.financeabike.de/assets/static/label/c2_ecom_label.all.min.js"
                         defer async
-                        data-c2-partnerApiKey="<?= $this->apiKey ?>"
-                        data-c2-mode="<?= $this->mode ?>"
-                        data-c2-checkoutCallback="<?= $this->productCheckoutLink === 'yes' ? 'true' : 'false' ?>"
-                        data-c2-locale="<?= $this->getCurrentLanguage() ?>"
+                        data-c2-partnerApiKey="<?php echo $this->apiKey; ?>"
+                        data-c2-mode="<?php echo $this->mode; ?>"
+                        data-c2-locale="<?php echo $this->getCurrentLanguage(); ?>"
+                        data-c2-checkoutCallback="<?php
+                            echo $this->productCheckoutLink === 'yes' ? 'true' : 'false';
+                        ?>"
                 ></script>
 
                 <?php if ($this->productCheckoutLink === 'yes') : ?>
                     <script>
                         if (typeof c2Checkout === 'undefined') {
                             function c2Checkout() {
-                                location.href = '<?= wc_get_checkout_url() ?>';
+                                location.href = '<?php echo wc_get_checkout_url(); ?>';
                             }
                         }
                     </script>
