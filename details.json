@@ -14,10 +14,10 @@
     "author_homepage": "https://www.spinnwerk.at/",
 
     "icons": {
-        "2x": "https://raw.githubusercontent.com/credi2/plugins-woocommerce-fab/master/assets/img/logo.png"
+        "2x": "https://raw.githubusercontent.com/credi2/plugins-woocommerce-fab/release-0.0.8/public/assets/img/logo.png"
     },
     "banners": {
-        "high": "https://raw.githubusercontent.com/credi2/plugins-woocommerce-fab/master/assets/img/banner.png"
+        "high": "https://raw.githubusercontent.com/credi2/plugins-woocommerce-fab/release-0.0.8/public/assets/img/banner.png"
     },
 
     "sections": {
