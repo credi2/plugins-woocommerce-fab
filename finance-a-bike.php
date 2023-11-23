@@ -28,7 +28,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 add_action('plugins_loaded', function () {
     PucFactory::buildUpdateChecker(
-        'https://plugins.spinnwerk.at/finance-a-bike/details.json',
+        'https://raw.githubusercontent.com/credi2/plugins-woocommerce-fab/master/details.json',
         __FILE__,
         'finance-a-bike'
     );
