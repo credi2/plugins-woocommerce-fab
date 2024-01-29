@@ -342,6 +342,7 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 || (
                     $this->enabled === 'yes'
                     && $this->isWithinMaxima()
+                    && $this->isShippedToAllowedCountry()
                 );
         }
 
@@ -382,10 +383,10 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 $billingCountry = WC()->customer->get_billing_country();
 
                 if (empty($billingCountry) === false) {
-                    return in_array($billingCountry, $this->countries);
-                } else {
-                    return true;
+                    return in_array($billingCountry, $this->countries, true);
                 }
+
+                return true;
             } catch (Exception $e) {
                 return true;
             }
@@ -405,7 +406,12 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
 
         private function eventuallyAddCheckoutIntegration(): void
         {
-            if (is_checkout() && is_order_received_page() === false && $this->is_available()) {
+            if (
+                $this->enabled === 'yes'
+                && is_checkout()
+                && is_order_received_page() === false
+                && $this->isWithinMaxima()
+            ) {
                 add_action('wp_footer', function () {
                     $this->addCheckoutJavaScript();
                 });
