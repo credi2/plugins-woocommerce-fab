@@ -44,6 +44,7 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
         private $statePaymentReceived = 'wc-processing';
         private $stateCancelled = 'wc-cancelled';
         private $stateTimedOut = 'wc-failed';
+        private $allowInsecure = 'no';
 
         private static $isProductScriptAdded = false;
         private static $isPostCheckoutScriptAdded = false;
@@ -153,6 +154,21 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                     'default' => 'test',
                     'desc_tip' => true,
                 ],
+                'allowInsecure' => [
+                    'title' => __('Allow FINANCE A BIKE on insecure websites?', 'finance-a-bike'),
+                    'type' => 'checkbox',
+                    'description' => sprintf(
+                        __(
+                            'FINANCE A BIKE disables itself if the website it runs on does not use SSL secured'
+                            . ' connections and WooCommerce\'s setting \'%s\' is not active. Activating this setting'
+                            . ' disables this behaviour.',
+                            'finance-a-bike'
+                        ),
+                        __('Force secure checkout', 'woocommerce'),
+                    ),
+                    'default' => $this->allowInsecure,
+                    'desc_tip' => true,
+                ],
                 'usagePrefix' => [
                     'title' => __('Reference', 'finance-a-bike'),
                     'type' => 'text',
@@ -253,7 +269,8 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
             ];
         }
 
-        public function payment_fields() {
+        public function payment_fields()
+        {
             parent::payment_fields();
 
             if (is_checkout()) {
@@ -689,7 +706,11 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
         private function checkSSL(): void
         {
             if ($this->enabled === 'yes') {
-                if (is_ssl() === false && get_option('woocommerce_force_ssl_checkout') === 'no') {
+                if (
+                    $this->allowInsecure !== 'yes'
+                    && is_ssl() === false
+                    && get_option('woocommerce_force_ssl_checkout') === 'no'
+                ) {
                     if ($this->isLive()) {
                         $this->enabled = 'no';
 

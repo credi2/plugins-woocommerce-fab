@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-09-29 18:20+0200\n"
-"PO-Revision-Date: 2022-09-29 18:22+0200\n"
+"POT-Creation-Date: 2024-03-19 12:16+0100\n"
+"PO-Revision-Date: 2024-03-19 12:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: finance-a-bike.php:16
 msgid ""
@@ -26,48 +26,48 @@ msgstr ""
 "FINANCE A BIKE ermöglicht es Kunden auch im Online-Shop, Waren im Wert von "
 "bis zu 12.000 € in Raten zu bezahlen."
 
-#: includes/FinanceABike.php:59 includes/FinanceABike.php:621
+#: includes/FinanceABike.php:65 includes/FinanceABike.php:757
 msgid "Live"
 msgstr "Live"
 
-#: includes/FinanceABike.php:60
+#: includes/FinanceABike.php:66
 msgid "Test"
 msgstr "Test"
 
-#: includes/FinanceABike.php:63
+#: includes/FinanceABike.php:69
 msgid "Order"
 msgstr "Bestellung"
 
-#: includes/FinanceABike.php:77
+#: includes/FinanceABike.php:83
 msgid "Enable/Disable"
 msgstr "Aktivieren/Deaktivieren"
 
-#: includes/FinanceABike.php:79
+#: includes/FinanceABike.php:85
 msgid "Enable FINANCE A BIKE"
 msgstr "FINANCE A BIKE aktivieren"
 
-#: includes/FinanceABike.php:83
+#: includes/FinanceABike.php:89
 msgid "Title"
 msgstr "Bezeichnung"
 
-#: includes/FinanceABike.php:86
+#: includes/FinanceABike.php:92
 msgid "This controls the title which the user sees during checkout."
 msgstr "Dies steuert den Titel, den der Benutzer beim Bezahlvorgang sieht."
 
-#: includes/FinanceABike.php:89
+#: includes/FinanceABike.php:95
 msgid "Installment purchase"
 msgstr "Ratenkauf"
 
-#: includes/FinanceABike.php:93
+#: includes/FinanceABike.php:99
 msgid "Description"
 msgstr "Beschreibung"
 
-#: includes/FinanceABike.php:96
+#: includes/FinanceABike.php:102
 msgid "Payment method description that the customer will see on your checkout."
 msgstr ""
 "Beschreibung der Zahlungsmethode, die Kunden bei der Kaufabwicklung sehen."
 
-#: includes/FinanceABike.php:100
+#: includes/FinanceABike.php:106
 msgid ""
 "FINANCE A BIKE allows you to pay for your purchases in installments. You can "
 "select the installment amount at the time of purchase and change it later at "
@@ -76,11 +76,11 @@ msgstr ""
 "FINANCE A BIKE ermöglicht es dir, deine Einkäufe in Raten zu bezahlen. Die "
 "Ratenhöhe kannst du dir beim Kauf aussuchen und später jederzeit ändern."
 
-#: includes/FinanceABike.php:107
+#: includes/FinanceABike.php:113
 msgid "Secret"
 msgstr "Secret"
 
-#: includes/FinanceABike.php:110
+#: includes/FinanceABike.php:116
 msgid ""
 "You can find your Secret in your FINANCE A BIKE portal under Settings -> E-"
 "COMMERCE"
@@ -88,11 +88,11 @@ msgstr ""
 "Sie finden Ihr Geheimnis in Ihrem FINANCE A BIKE Portal unter Einstellungen -"
 "> E-COMMERCE"
 
-#: includes/FinanceABike.php:117
+#: includes/FinanceABike.php:123
 msgid "API Key"
 msgstr "API-Key"
 
-#: includes/FinanceABike.php:120
+#: includes/FinanceABike.php:126
 msgid ""
 "You can find your API Key in your FINANCE A BIKE portal under Settings -> E-"
 "COMMERCE"
@@ -100,11 +100,11 @@ msgstr ""
 "Sie finden Ihren API-Key in Ihrem FINANCE A BIKE Portal unter Einstellungen -"
 "> E-COMMERCE"
 
-#: includes/FinanceABike.php:127
+#: includes/FinanceABike.php:133
 msgid "Mode"
 msgstr "Modus"
 
-#: includes/FinanceABike.php:143
+#: includes/FinanceABike.php:149
 msgid ""
 "The two modes can only be used with the corresponding access data. For "
 "example, if you have Live access data, you can only use Live mode. To de-/"
@@ -115,11 +115,11 @@ msgstr ""
 "Live-Modus nutzen. Um das Sandboxing im Live-Modus zu de-/aktivieren, wenden "
 "Sie sich bitte an FINANCE A BIKE."
 
-#: includes/FinanceABike.php:152
+#: includes/FinanceABike.php:158
 msgid "Reference"
 msgstr "Verwendungszweck"
 
-#: includes/FinanceABike.php:155
+#: includes/FinanceABike.php:161
 msgid ""
 "Will be used for the transfer to your account. The order number will be "
 "appended automatically."
@@ -127,11 +127,11 @@ msgstr ""
 "Wird für die Überweisung auf Ihr Konto verwendet. Die Bestellnummer wird "
 "automatisch angehängt."
 
-#: includes/FinanceABike.php:163 includes/FinanceABike.php:243
+#: includes/FinanceABike.php:169 includes/FinanceABike.php:249
 msgid "Validity period"
 msgstr "Gültigkeitsdauer"
 
-#: includes/FinanceABike.php:166
+#: includes/FinanceABike.php:172
 msgid ""
 "How long (in days) users can complete the process at FINANCE A BIKE. You "
 "must hold the goods during this period."
@@ -139,35 +139,35 @@ msgstr ""
 "Wie lange (in Tagen) können die Nutzer den Vorgang bei FINANCE A BIKE "
 "abschließen. Sie müssen die Ware während dieses Zeitraums vorhalten."
 
-#: includes/FinanceABike.php:174
+#: includes/FinanceABike.php:180
 msgid "Product level placement"
 msgstr "Platzierung auf Produktebene"
 
-#: includes/FinanceABike.php:177
+#: includes/FinanceABike.php:183
 msgid "No"
 msgstr "Keine"
 
-#: includes/FinanceABike.php:178
+#: includes/FinanceABike.php:184
 msgid "Product page"
 msgstr "Produktseite"
 
-#: includes/FinanceABike.php:179
+#: includes/FinanceABike.php:185
 msgid "Overview page"
 msgstr "Übersichtsseite"
 
-#: includes/FinanceABike.php:180
+#: includes/FinanceABike.php:186
 msgid "Product & Overview Page"
 msgstr "Produkt- & Übersichtsseite"
 
-#: includes/FinanceABike.php:183
+#: includes/FinanceABike.php:189
 msgid "Whether and where to integrate a widget with products."
 msgstr "Ob und wo ein Widget in Produkte integriert werden soll."
 
-#: includes/FinanceABike.php:190
+#: includes/FinanceABike.php:196
 msgid "Show button to checkout?"
 msgstr "Button zur Kasse anzeigen?"
 
-#: includes/FinanceABike.php:193
+#: includes/FinanceABike.php:199
 msgid ""
 "Defines whether to display a button in the product-level overlay that takes "
 "users directly to checkout."
@@ -175,19 +175,19 @@ msgstr ""
 "Legt fest, ob im Overlay auf Produktebene eine Schaltfläche angezeigt werden "
 "soll, die den Benutzer direkt zur Kasse führt."
 
-#: includes/FinanceABike.php:201
+#: includes/FinanceABike.php:207
 msgid "Order state 'Order Received'"
 msgstr "Bestellstatus „Bestellung Eingegangen“"
 
-#: includes/FinanceABike.php:205
+#: includes/FinanceABike.php:211
 msgid "Initial state of an order placed with FINANCE A BIKE."
 msgstr "Initialer Status einer mit FINANCE A BIKE aufgegebenen Bestellung."
 
-#: includes/FinanceABike.php:212
+#: includes/FinanceABike.php:218
 msgid "Order state 'Payment Received'"
 msgstr "Bestellstatus „Bezahlung Eingegangen“"
 
-#: includes/FinanceABike.php:216
+#: includes/FinanceABike.php:222
 msgid ""
 "State of an order placed with FINANCE A BIKE once the customer completed the "
 "funding process."
@@ -195,11 +195,11 @@ msgstr ""
 "Status einer Bestellung, die mit FINANCE A BIKE aufgegeben wurde, sobald der "
 "Kunde den Finanzierungsprozess abgeschlossen hat."
 
-#: includes/FinanceABike.php:223
+#: includes/FinanceABike.php:229
 msgid "Order state 'Cancelled'"
 msgstr "Bestellstatus „Abgebrochen“"
 
-#: includes/FinanceABike.php:227
+#: includes/FinanceABike.php:233
 msgid ""
 "State of an order placed with FINANCE A BIKE if the customer cancels the "
 "funding process."
@@ -207,11 +207,11 @@ msgstr ""
 "Status einer Bestellung, die mit FINANCE A BIKE aufgegeben wurde, wenn der "
 "Kunde den Finanzierungsprozess abbricht."
 
-#: includes/FinanceABike.php:234
+#: includes/FinanceABike.php:240
 msgid "Order state 'Timeout'"
 msgstr "Bestellstatus „Zeitüberschreitung“"
 
-#: includes/FinanceABike.php:239
+#: includes/FinanceABike.php:245
 #, php-format
 msgid ""
 "State of an order placed with FINANCE A BIKE if the customer does not "
@@ -221,17 +221,33 @@ msgstr ""
 "Kunde den Finanzierungsprozess nicht rechtzeitig abschließt. Mit der "
 "Einstellung „%s“ kann die Zeitspanne eingestellt werden."
 
-#: includes/FinanceABike.php:261
+#: includes/FinanceABike.php:255
+msgid "Allow FINANCE A BIKE on insecure websites?"
+msgstr "FINANCE A BIKE auf ungesicherten Websites erlauben?"
+
+#: includes/FinanceABike.php:259
+#, php-format
+msgid ""
+"FINANCE A BIKE disables itself if the website it runs on does not use SSL "
+"secured connections and WooCommerce's setting '%s' is not active. Activating "
+"this setting disables this behaviour."
+msgstr ""
+"FINANCE A BIKE deaktiviert sich selbst, wenn die Webseite, auf der es "
+"eingesetzt wird, keine SSL gesicherten Verbindungen benutzt und die "
+"WooCommerce-Einstellung „%s“ nicht aktiv ist. Das aktivieren dieser "
+"Einstellung deaktiviert dieses Verhalten."
+
+#: includes/FinanceABike.php:295
 #, php-format
 msgid "%s %s: An error has occurred, please contact <a href=\"%s\">%s</a>."
 msgstr ""
 "%s %s: Ein Fehler ist aufgetreten, bitte wende dich an <a href=\"%s\">%s</a>."
 
-#: includes/FinanceABike.php:277
+#: includes/FinanceABike.php:311
 msgid "Customer still needs to verify."
 msgstr "Kunde muss sich noch verifizieren."
 
-#: includes/FinanceABike.php:458
+#: includes/FinanceABike.php:554
 #, php-format
 msgid ""
 "<strong>Caution:</strong> %s is only available for customers with a billing "
@@ -243,7 +259,7 @@ msgstr ""
 "Plug-In hinzugefügt, weitere Länder hier zu erlauben wird<br>darauf keinen "
 "Einfluss nehmen!"
 
-#: includes/FinanceABike.php:563
+#: includes/FinanceABike.php:695
 #, php-format
 msgid ""
 "<strong>%s</strong> has been disabled because WooCommerce does not use Euro "
@@ -254,7 +270,7 @@ msgstr ""
 "eingestellt hat. Bitte stellen Sie Euro als Währung ein und aktivieren Sie "
 "die Zahlungsmethode anschließend wieder <a href=\"%s\">hier</a>."
 
-#: includes/FinanceABike.php:599
+#: includes/FinanceABike.php:735
 #, php-format
 msgid ""
 "<strong>%s</strong> has been disabled because WooCommerce does not require "
@@ -264,10 +280,10 @@ msgid ""
 msgstr ""
 "<strong>%s</strong> wurde deaktiviert, da WooCommerce kein SSL-Zertifikat "
 "für die Zahlungsseite verlangt. Bitte erwerben und installieren Sie ein "
-"gültiges SSL-Zertifikat und aktivieren Sie dann die Zahlungsmethode <a href="
-"\"%s\">hier</a> wieder."
+"gültiges SSL-Zertifikat und aktivieren Sie dann die Zahlungsmethode <a "
+"href=\"%s\">hier</a> wieder."
 
-#: includes/FinanceABike.php:615
+#: includes/FinanceABike.php:751
 #, php-format
 msgid ""
 "<strong>%s</strong> will be disabled in %2$s mode because WooCommerce does "
@@ -278,11 +294,11 @@ msgstr ""
 "Zertifikat für die Zahlungsseite benötigt. Bitte erwerben und installieren "
 "Sie ein gültiges SSL-Zertifikat, bevor Sie den Modus auf %2$s ändern."
 
-#: includes/FinanceABike.php:666
+#: includes/FinanceABike.php:802
 msgid "Payment process was canceled."
 msgstr "Bezahlvorgang wurde abgebrochen."
 
-#: includes/FinanceABike.php:674
+#: includes/FinanceABike.php:810
 msgid "Order expired."
 msgstr "Bestellung abgelaufen."
 
