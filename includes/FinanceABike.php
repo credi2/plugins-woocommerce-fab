@@ -509,7 +509,11 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
             });
 
             add_filter('woocommerce_thankyou_order_received_text', function (string $text, ?WC_Order $order): string {
-                if (self::$isPostCheckoutScriptAdded && $order && $order->has_status('pending')) {
+                if (
+                    self::$isPostCheckoutScriptAdded
+                    && $order
+                    && $this->orderHasStatus($order, $this->statePendingPayment)
+                ) {
                     return '';
                 }
 
@@ -559,6 +563,11 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                         . '</p>';
                 }, \WCML\PaymentGateways\Hooks::PRIORITY - 1);
             }
+        }
+
+        private function orderHasStatus(WC_Order $order, string $orderStatus): bool
+        {
+            return $order->has_status(ltrim($orderStatus, 'wc-'));
         }
 
         private function registerProductStyle(): void
@@ -877,7 +886,7 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
             if (
                 self::$isPostCheckoutScriptAdded === false
                 && $order->get_payment_method() === $this->id
-                && $order->has_status('pending')
+                && $this->orderHasStatus($order, $this->statePendingPayment)
             ) {
                 wc_get_template('checkout/order-received.php', ['order' => $order]);
 
