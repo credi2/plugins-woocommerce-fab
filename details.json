@@ -1,8 +1,8 @@
 {
     "name": "FINANCE A BIKE",
     "slug": "finance-a-bike",
-    "version": "0.0.9",
-    "download_url": "https://github.com/credi2/plugins-woocommerce-fab/releases/download/0.0.9/fab-woocommerce.zip",
+    "version": "0.0.10",
+    "download_url": "https://github.com/credi2/plugins-woocommerce-fab/releases/download/0.0.10/fab-woocommerce.zip",
 
     "homepage": "https://www.financeabike.de/haendler/",
     "requires": "5.9.3",
