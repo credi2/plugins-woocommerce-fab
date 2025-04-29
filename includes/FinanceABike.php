@@ -363,7 +363,7 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 );
         }
 
-        private function isWithinMaxima(float $price = null): bool
+        private function isWithinMaxima(?float $price = null): bool
         {
             $total = $price;
 
