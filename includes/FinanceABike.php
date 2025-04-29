@@ -622,13 +622,13 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 }, 6); // 5 = the ending </a>, 10 = add to cart button -> place between
 
                 add_action('wp_footer', function () {
-                    if (is_product() || is_shop()) {
+                    if (is_product() || is_shop() || is_product_category() || is_product_tag()) {
                         $this->addProductJavaScript();
                     }
                 });
 
                 add_action('wp_enqueue_scripts', function () {
-                    if (is_product() || is_shop()) {
+                    if (is_product() || is_shop() || is_product_category() || is_product_tag()) {
                         wp_enqueue_style('finance-a-bike-product');
                     }
                 });
