@@ -8,7 +8,7 @@ defined('ABSPATH') or die;
  * FINANCE A BIKE - WooCommerce Payment Gateway
  *
  * @package FINANCE A BIKE
- * @copyright 2022 SPiNNWERK GmbH
+ * @copyright 2022-2025 SPiNNWERK GmbH
  *
  * @wordpress-plugin
  * Plugin Name: FINANCE A BIKE – die schnelle und einfache Online-Fahrradfinanzierung
