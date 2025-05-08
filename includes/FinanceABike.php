@@ -363,7 +363,7 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 );
         }
 
-        private function isWithinMaxima(float $price = null): bool
+        private function isWithinMaxima(?float $price = null): bool
         {
             $total = $price;
 
@@ -520,6 +520,14 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 return $text;
             }, 10, 2);
 
+            add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order) {
+                if ($order->get_payment_method() === self::GATEWAY_ID) {
+                    unset($actions['pay']);
+                }
+
+                return $actions;
+            }, 10, 2);
+
             // do not allow WooCommerce to cancel orders created with this payment gateway
             add_filter('woocommerce_cancel_unpaid_order', function ($cancelOrder, WC_Order $order): bool {
                 if ($order->get_payment_method() === self::GATEWAY_ID) {
@@ -614,13 +622,13 @@ if (class_exists('\Spinnwerk\FinanceABike\FinanceABike') === false && class_exis
                 }, 6); // 5 = the ending </a>, 10 = add to cart button -> place between
 
                 add_action('wp_footer', function () {
-                    if (is_product() || is_shop()) {
+                    if (is_product() || is_shop() || is_product_category() || is_product_tag()) {
                         $this->addProductJavaScript();
                     }
                 });
 
                 add_action('wp_enqueue_scripts', function () {
-                    if (is_product() || is_shop()) {
+                    if (is_product() || is_shop() || is_product_category() || is_product_tag()) {
                         wp_enqueue_style('finance-a-bike-product');
                     }
                 });
