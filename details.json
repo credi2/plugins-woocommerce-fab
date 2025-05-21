@@ -1,8 +1,8 @@
 {
     "name": "FINANCE A BIKE",
     "slug": "finance-a-bike",
-    "version": "0.0.10",
-    "download_url": "https://github.com/credi2/plugins-woocommerce-fab/releases/download/0.0.10/fab-woocommerce.zip",
+    "version": "0.0.11",
+    "download_url": "https://github.com/credi2/plugins-woocommerce-fab/releases/download/0.0.11/fab-woocommerce.zip",
 
     "homepage": "https://www.financeabike.de/haendler/",
     "requires": "5.9.3",
@@ -21,7 +21,7 @@
     },
 
     "sections": {
-        "description": "<p><strong>FINANCE A BIKE – die schnelle und einfache Online-Fahrradfinanzierung</strong></p><p>Überzeugen Sie sich selbst. Eine innovative Bezahlmethode für Sie und Ihre Kunden.</p><div>Ihre Vorteile als Händler:<ul><li>Absatzsteigerung<br>Steigern Sie Ihr Verkaufspotential: Mit günstigen Raten werden höherwertige Waren einem breiteren Publikum zugänglich.</li><li>Schnell und unkompliziert<br>Schonen Sie Ihre wertvollen Personalkapazitäten: Einen Finanzierungsvorgang legen Sie mit nur wenigen Klicks an. Ihr Kunde durchläuft dann den Finanzierungsprozess eigenständig und kann sein Traumrad noch am selben Tag mitnehmen. So gewinnen Sie Zeit für noch intensivere Beratung oder weitere Kunden.</li><li>Digitaler Komfort<br>Unser Händlerportal ist eine webbasierte Plattform. Der Download neuer Software ist hier nicht notwendig. NutzenSie das Händlerportal nicht nur auf dem stationären Rechner – Sie können Warenkörbe ganz einfach über IhrSmartphone oder Tablet anlegen. Ideal für eine Beratung ganz nah am Kunden.</li></ul></div><p>Und das Beste: Die Nutzung von FINANCE A BIKE ist für Sie völlig kostenlos.</p>",
+        "description": "<p><strong>FINANCE A BIKE – Die schnelle und einfache Online-Fahrradfinanzierung</strong></p><p>Überzeugen Sie sich selbst. Eine innovative Bezahlmethode für Sie und Ihre Kunden.</p><div>Ihre Vorteile als Händler:<ul><li>Absatzsteigerung<br>Steigern Sie Ihr Verkaufspotential: Mit günstigen Raten werden höherwertige Waren einem breiteren Publikum zugänglich.</li><li>Schnell und unkompliziert<br>Schonen Sie Ihre wertvollen Personalkapazitäten: Einen Finanzierungsvorgang legen Sie mit nur wenigen Klicks an. Ihr Kunde durchläuft dann den Finanzierungsprozess eigenständig und kann sein Traumrad noch am selben Tag mitnehmen. So gewinnen Sie Zeit für noch intensivere Beratung oder weitere Kunden.</li><li>Digitaler Komfort<br>Unser Händlerportal ist eine webbasierte Plattform. Der Download neuer Software ist hier nicht notwendig. NutzenSie das Händlerportal nicht nur auf dem stationären Rechner – Sie können Warenkörbe ganz einfach über IhrSmartphone oder Tablet anlegen. Ideal für eine Beratung ganz nah am Kunden.</li></ul></div><p>Und das Beste: Die Nutzung von FINANCE A BIKE ist für Sie völlig kostenlos.</p>",
         "changelog": "<section><h4>v0.0.9</h4><ol><li>SSL compatibility update</li></ol></section><section><h4>v0.0.8</h4><ol><li>Fixed issue with WordPress cron system</li></ol></section><section><h4>v0.0.7</h4><ol><li>Fixed compatibility with WooCommerce's new PayPal integration plugin</li></ol></section><section><h4>v0.0.6</h4><ol><li>Added JavaScript API for updating product integrations: <p><code>fabUpdateProductAmount('&lt;Product-ID or SKU &gt;', &lt;new total product price&gt;);</code></p></li></ol></section><section><h4>v0.0.4</h4><ol><li>Changes in code structure</li></ol></section><section><h4>v0.0.3</h4><ol><li>Added support for custom order numbers</li><li>Improved integration on checkout page</li><li>Added shipping costs to list of bought items</li></ol></section><section><h4>v0.0.2</h4><ol><li>Improved SSL Detection</li></ol></section><section><h4>v0.0.1</h4><ol><li>Updated Texts</li></ol></section><section><h4>v0.0.0</h4><ol><li>\uD83C\uDF89 First Beta</li></ol></section>"
     }
 }
